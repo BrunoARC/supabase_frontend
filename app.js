@@ -13,7 +13,7 @@ let currentProduct = null;
 
 // Function to fetch all products from the server
 async function fetchProducts() {
-  const response = await fetch('http://localhost:3000/products');
+  const response = await fetch('http://54.233.46.177:3000/products');
   const products = await response.json();
 
   // Clear product list
@@ -65,7 +65,7 @@ addProductForm.addEventListener('submit', async event => {
 
 // Function to add a new product
 async function addProduct(name, price, description) {
-  const response = await fetch('http://localhost:3000/products', {
+  const response = await fetch('http://54.233.46.177:3000/products', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -94,7 +94,7 @@ updateCancel.addEventListener('click', () => {
 
 // Function to update an existing product
 async function updateProduct(id, name, description, price) {
-  const response = await fetch('http://localhost:3000/products/' + id, {
+  const response = await fetch('http://54.233.46.177:3000/products/' + id, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
@@ -106,7 +106,7 @@ async function updateProduct(id, name, description, price) {
 
 // Function to delete a new product
 async function deleteProduct(id) {
-  const response = await fetch('http://localhost:3000/products/' + id, {
+  const response = await fetch('http://54.233.46.177:3000/products/' + id, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json'
