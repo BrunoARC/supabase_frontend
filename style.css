@@ -96,4 +96,38 @@ body {
   input[type="number"] {
     -moz-appearance: textfield;
   }
+
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+  }
+
+  .modal.open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-content {
+    background-color: #fff;
+    padding: 10px 20px 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px #333;
+    min-width: 280px;
+    max-width: 90%;
+  }
+
+  #update-cancel {
+    background-color: #999;
+  }
+
+  #update-cancel:hover {
+    background-color: #777;
+  }
   
