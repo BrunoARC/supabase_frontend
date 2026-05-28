@@ -1,36 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product CRUD</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <h1>Product CRUD</h1>
+  <header class="page-header">
+    <h1>Product CRUD</h1>
+    <p class="subtitle">Manage your products with ease</p>
+  </header>
 
-  <form id="add-product-form">
-    <h2>Add Product</h2>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-    <label for="price">Price:</label>
-    <input type="number" id="price" name="price" required step="0.01">
-    <label for="description">Description:</label>
-    <input type="text" id="description" name="description" required>
-    <button type="submit">Add</button>
-  </form>
+  <main class="container">
+    <form id="add-product-form" class="card">
+      <h2>Add Product</h2>
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="e.g. Gaming headset" required>
+      </div>
+      <div class="field">
+        <label for="price">Price</label>
+        <input type="number" id="price" name="price" placeholder="0.00" required step="0.01">
+      </div>
+      <div class="field">
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" placeholder="Short description" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Add Product</button>
+    </form>
 
-  <ul id="products"></ul>
+    <section class="products-section">
+      <h2>Products</h2>
+      <ul id="products"></ul>
+    </section>
+  </main>
 
   <div id="update-modal" class="modal">
-    <div class="modal-content">
+    <div class="modal-content card">
       <h2>Update Product</h2>
       <form id="update-product-form">
         <input type="hidden" id="update-id">
-        <label for="update-description">Description:</label>
-        <input type="text" id="update-description" name="update-description">
-        <label for="update-price">Price:</label>
-        <input type="number" id="update-price" name="update-price" step="0.01">
-        <button type="submit">Save</button>
-        <button type="button" id="update-cancel">Cancel</button>
+        <div class="field">
+          <label for="update-description">Description</label>
+          <input type="text" id="update-description" name="update-description">
+        </div>
+        <div class="field">
+          <label for="update-price">Price</label>
+          <input type="number" id="update-price" name="update-price" step="0.01">
+        </div>
+        <div class="modal-actions">
+          <button type="button" id="update-cancel" class="btn btn-ghost">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
       </form>
     </div>
   </div>
